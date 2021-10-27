@@ -53,37 +53,63 @@ for ( i = 0; i < items.length; i++) {
 }
 
 
-// click tasto next
+
 
 let indexActive = 0; /* per contare la posizione in cui si trova active nell'array*/
 
+
+// click tasto next
 document.querySelector(".next").addEventListener("click",
 
+    // al click del bottone
     function(){
-
+        // incremento subito indexActive
         ++indexActive;
+        
+        // controllo che il contatore abbia superato la lista, in quel torna indietro
+        if (indexActive == 5) {
 
+            indexActive = 0;
+        
+        }
+
+        // rimuovo la classe "active" dall'immagine centrale attuale e la aggiungo a quella successiva
         document.querySelector(".big_img.active").classList.remove("active");
         document.getElementsByClassName("big_img")[indexActive].classList.add("active");
 
+        // rimuovo la classe "active" dall' immagine centrale attuale e la aggiungo a quella successiva
         document.querySelector(".small_img.active").classList.remove("active");
         document.getElementsByClassName("small_img")[indexActive].classList.add("active");
 
+
+        
     }
 )
 
 // click tasto back
 document.querySelector(".back").addEventListener("click",
 
+    // al click del bottone back
     function() {
 
+            // decremento subito il contatore
         --indexActive;
 
+        // verifico se il contatore è inferiore a zero, in quel caso torna indietro iniziando dal valore più alto
+        if (indexActive == -1 ) {
+
+            indexActive = 4;
+        
+        }
+
+        // rimuovo la class active dall'immagine centrale attuale e la aggiungo a quella precedente
         document.querySelector(".big_img.active").classList.remove("active");
         document.getElementsByClassName("big_img")[indexActive].classList.add("active");
 
+        // rimuovo la class active dall'immagine laterale attuale e la aggiungo a quella precedente
         document.querySelector(".small_img.active").classList.remove("active");
         document.getElementsByClassName("small_img")[indexActive].classList.add("active");
 
     }
 )
+
