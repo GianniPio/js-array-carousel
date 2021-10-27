@@ -6,3 +6,35 @@
     box-sizing: border-box;
 }
 
+#carousel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.big_img {
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.big_img.active {
+    display: block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text {
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    color: white;
+}
+
+.small_img.active {
+    border: 2px solid rgb(216, 211, 211);
+    opacity: 1;
+}
