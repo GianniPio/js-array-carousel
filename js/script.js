@@ -15,11 +15,16 @@ const text = ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temp
 
 const big = document.querySelector(".big");
 const small = document.querySelector(".small");
+const back = document.querySelector(".back");
+const next = document.querySelector(".next");
+
 
 // variabili vuote per la stampa
 
 let bigImg = "";
 let smallImg = "";
+
+// ciclo for per stampare gli elementi in HTML per ogni indice dell'array items
 
 for ( i = 0; i < items.length; i++) {
 
@@ -34,14 +39,38 @@ for ( i = 0; i < items.length; i++) {
     `;
 
     big.innerHTML = bigImg;
-    document.getElementsByClassName("big_img")[0].classList.add("active");
-
-    smallImg += `
+    
+    smallImg = `
         <div class="small_img">
             <img src="${items[i]}" alt="${title[i]}">
         </div>
     `
+    small.innerHTML += smallImg;
 
-    small.innerHTML = smallImg;
+    // aggiunga classe active
+    document.getElementsByClassName("big_img")[0].classList.add("active");
     document.getElementsByClassName("small_img")[0].classList.add("active");
 }
+
+
+// click tasto next
+
+let indexActive = 0; /* per contare la posizione in cui si trova active*/
+
+document.querySelector(".next").addEventListener("click",
+
+    function(){
+
+        ++indexActive;
+
+        document.querySelector(".big_img.active").classList.remove("active");
+        document.getElementsByClassName("big_img")[indexActive].classList.add("active");
+
+        document.querySelector(".small_img.active").classList.remove("active");
+        document.getElementsByClassName("small_img")[indexActive].classList.add("active");
+
+    }
+
+
+
+)

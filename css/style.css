@@ -8,9 +8,8 @@
 
 img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
+
 /* tag immagine grande */
 
 .big_img {
@@ -45,4 +44,9 @@ img {
     border: 2px solid rgb(216, 211, 211);
     opacity: 1;
     filter: brightness(1);
+}
+
+.back, .next {
+    z-index: 90;
+    cursor: pointer;
 }
