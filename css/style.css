@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-#carousel {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .big_img {
     height: 100%;
     display: none;
@@ -27,6 +22,10 @@ img {
     object-fit: cover;
 }
 
+.small_img img {
+    filter: brightness(0.5);
+}
+
 .text {
     position: absolute;
     right: 2%;
@@ -34,7 +33,8 @@ img {
     color: white;
 }
 
-.small_img.active {
+.small_img.active img {
     border: 2px solid rgb(216, 211, 211);
     opacity: 1;
+    filter: brightness(1);
 }
