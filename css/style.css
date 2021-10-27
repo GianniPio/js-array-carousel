@@ -22,11 +22,16 @@ img {
     display: block;
 }
 
+.big_img img {
+    height: 600px;
+}
+
 .text {
     position: absolute;
-    right: 2%;
     bottom: 2%;
+    right: 2%;
     color: white;
+    text-align: end;
 }
 
 /* tag immagini piccole */
