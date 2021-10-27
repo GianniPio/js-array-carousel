@@ -55,7 +55,7 @@ for ( i = 0; i < items.length; i++) {
 
 // click tasto next
 
-let indexActive = 0; /* per contare la posizione in cui si trova active*/
+let indexActive = 0; /* per contare la posizione in cui si trova active nell'array*/
 
 document.querySelector(".next").addEventListener("click",
 
@@ -70,7 +70,20 @@ document.querySelector(".next").addEventListener("click",
         document.getElementsByClassName("small_img")[indexActive].classList.add("active");
 
     }
+)
 
+// click tasto back
+document.querySelector(".back").addEventListener("click",
 
+    function() {
 
+        --indexActive;
+
+        document.querySelector(".big_img.active").classList.remove("active");
+        document.getElementsByClassName("big_img")[indexActive].classList.add("active");
+
+        document.querySelector(".small_img.active").classList.remove("active");
+        document.getElementsByClassName("small_img")[indexActive].classList.add("active");
+
+    }
 )
